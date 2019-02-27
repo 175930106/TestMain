@@ -11,7 +11,7 @@ from common import commonMethods as common
 com=common()
 
 
-# 测试用例文件路径123
+# 测试用例文件路径666
 casepath = './'
 # 测试文件名
 rule=["demo2.py","demo3.py"]
