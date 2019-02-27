@@ -10,7 +10,7 @@ import HTMLTestRunner
 from common import commonMethods as common
 com=common()
 
-
+#666
 # 测试用例文件路径666
 casepath = './'
 # 测试文件名
