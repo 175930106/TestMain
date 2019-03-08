@@ -7,8 +7,10 @@ from common import commonMethods as common
 com=common()
 p=com.read_priority()
 
+com.test(1, False, [1])
 
 
+@unittest.skipIf(com.test(p=1, enable=True),"class")
 class Testaa1(unittest.TestCase):
     u'''测试用例a的集合'''
 #     @classmethod
@@ -17,14 +19,15 @@ class Testaa1(unittest.TestCase):
 # #         cls.driver = webdriver.Chrome()
 
     def setUp(self):
+        pass
 #         self.driver=webdriver.Chrome()
 #         self.driver.get("https://www.cnblogs.com/yoyoketang/")
-        print "demo2---setUp"
+#         print "demo2---setUp"
         
         
     @unittest.skipIf(1>p,"P1 level")
     def test_01(self):
-        print " demo2--test_01"
+        print " demo--test_01"
 #         u'''用例1：用例1的操作步骤'''
 #         t = self.driver.title
 #         print(t)
@@ -32,16 +35,16 @@ class Testaa1(unittest.TestCase):
 
     @unittest.skipIf(2>p,"P2 level")
     def test_02(self):
-        print " demo2--test_02"
+        print " demo--test_02"
 #         u'''用例2：用例2的操作步骤'''
 #         t = self.driver.title
 #         print(t)
 #         self.assertIn(u"悠悠", t)
 
 
-    @unittest.skipIf(3>p,"P3 level")
+    @unittest.skipIf(com.test(p=1, enable=True),"P3 level")
     def test_03(self):
-        print " demo2--test_03"
+        print " demo--test_03"
 #         u'''用例3：用例3的操作步骤'''
 #         t = self.driver.title
 #         print(t)
@@ -55,4 +58,4 @@ class Testaa1(unittest.TestCase):
 #         cls.driver.quit()
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)

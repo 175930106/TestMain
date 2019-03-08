@@ -315,3 +315,30 @@ class commonMethods(unittest.TestCase):
                     return True
             else:
                 raise ValueError
+            
+
+    def test(self,p=1,enable=True,list=[1,2,3]):
+#         print list
+        if enable:
+            if p in list:
+                return True
+            else:
+                return False
+        else:
+            return False
+
+def test1(p=1,enable=True,list=[1,2,3]):
+    global _global_list
+    _global_list=list
+    
+
+    if enable:
+        if p in list:
+            return True
+        else:
+            return False
+    else:
+        return False 
+
+
+# print test1(list=[2])
